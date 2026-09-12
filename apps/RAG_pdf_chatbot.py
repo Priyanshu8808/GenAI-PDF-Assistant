@@ -92,12 +92,17 @@ st.title("PDF - Assistant")
 if not st.session_state.document_uploaded:
     uploaded=st.file_uploader(label="Select pdf file", type=["pdf"], accept_multiple_files=True)
     if uploaded:
+        import os  # Ensure os is imported at the top of your file
+
         with st.spinner("procesing..."):
-            path="./doc_files/"
+            path = "./doc_files/"
+            os.makedirs(path, exist_ok=True)  # Creates directory if it doesn't exist
+        
             for file in uploaded:
-                with open(path + file.name, "wb" )as f:
+                file_path = os.path.join(path, file.name)
+                with open(file_path, "wb") as f:
                     f.write(file.getvalue())
-                
+        
             process_doc(path)
             st.rerun()        
             
