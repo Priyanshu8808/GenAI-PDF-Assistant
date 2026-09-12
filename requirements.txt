@@ -10,4 +10,5 @@ langchain-community
 langgraph
 PyPDF
 beautifulsoup4
+sentence-transformers
 
