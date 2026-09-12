@@ -11,4 +11,4 @@ langgraph
 PyPDF
 beautifulsoup4
 sentence-transformers
-
+torchvision
