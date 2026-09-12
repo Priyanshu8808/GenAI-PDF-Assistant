@@ -3,6 +3,7 @@ langchain-openai
 langchain-huggingface
 langchain-anthropic
 langchain-groq
+langchain-ollama
 dotenv
 streamlit
 langchain-community
