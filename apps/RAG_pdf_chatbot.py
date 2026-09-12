@@ -1,7 +1,8 @@
 from dotenv import load_dotenv
 load_dotenv()
 
-from langchain_ollama import OllamaEmbeddings
+
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_groq import ChatGroq
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.agents import create_agent
@@ -43,7 +44,7 @@ def process_doc(path):
 
 
     #embedding and vecotr db
-    emb=OllamaEmbeddings(model="nomic-embed-text")
+    emb = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
     vector_db=InMemoryVectorStore.from_documents(
         documents=docs,
         embedding=emb
